@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="#hero">À propos</a></li>
                 <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#experience">Expérience</a></li>
                 <li><a href="#comp">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -79,6 +80,38 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== EXPÉRIENCE ===== -->
+    <section id="experience">
+        <div class="section-wrap">
+            <div class="section-label">Expérience professionnelle</div>
+            <h2 class="section-title">Mon Expérience</h2>
+
+            <div class="exp-card reveal">
+                <div class="exp-left">
+                    <div class="exp-logo">R</div>
+                    <div class="exp-line"></div>
+                </div>
+                <div class="exp-right">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-title">Stagiaire — Réseaux & Télécommunications</h3>
+                            <p class="exp-company">Resetel</p>
+                        </div>
+                        <span class="tl-date">2025</span>
+                    </div>
+                    <p class="exp-desc">Stage effectué chez Resetel, entreprise spécialisée dans les solutions réseaux et télécommunications. Découvrez les missions réalisées, les technologies utilisées et les compétences acquises durant cette expérience.</p>
+                    <a href="stage.html" class="btn exp-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Voir le détail du stage →
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -232,8 +265,6 @@
                     </div>
                 </div>
 
-            
-
                 <div class="project-card">
                     <div class="project-img-wrap">
                         <img src="tor.svg" alt="Routage Oignon">
@@ -243,6 +274,7 @@
                         <a href="saeoignon.html" class="btn">Voir le projet →</a>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-img-wrap">
                         <img src="saecyber03.png" alt="cyber03">
@@ -255,7 +287,7 @@
 
                 <div class="project-card">
                     <div class="project-img-wrap">
-                        <img src="rootme.png" alt="Réseau local">
+                        <img src="rootme.png" alt="Root-Me">
                     </div>
                     <div class="project-body">
                         <p>Root-Me Pentesting.</p>
@@ -263,7 +295,7 @@
                     </div>
                 </div>
 
-                 <div class="project-card">
+                <div class="project-card">
                     <div class="project-img-wrap">
                         <img src="gif.png" alt="Python GIF">
                     </div>
@@ -295,13 +327,11 @@
     </footer>
 
     <script>
-        // Sticky header shadow
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 20);
         });
 
-        // Scroll reveal
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
