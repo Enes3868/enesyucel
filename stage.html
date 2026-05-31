@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Resetel — H-E Yucel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page stage */
+        .stage-hero {
+            padding: 140px 40px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue);
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+            transition: gap .25s;
+        }
+        .back-link:hover { gap: 12px; }
+
+        .stage-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .stage-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--blue-pale);
+            color: var(--blue);
+            font-size: .78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 999px;
+        }
+
+        .stage-hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .stage-hero h1 em { color: var(--blue); font-style: italic; }
+
+        .stage-hero .subtitle {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* Grille contenu */
+        .stage-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Blocs de contenu principal */
+        .stage-block {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            margin-bottom: 24px;
+        }
+
+        .stage-block h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--ink);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+            border-bottom: none;
+        }
+
+        .block-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--blue-pale);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .block-icon svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; }
+
+        .stage-block p {
+            font-size: .95rem;
+            color: var(--ink-soft);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .stage-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .stage-block li {
+            font-size: .92rem;
+            color: var(--ink-soft);
+            padding: 8px 0 8px 20px;
+            position: relative;
+            line-height: 1.5;
+            border-bottom: 1px solid #f0f0f8;
+            border-left: none;
+        }
+
+        .stage-block li:last-child { border-bottom: none; }
+
+        .stage-block li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
+            font-size: .8rem;
+        }
+
+        /* Sidebar */
+        .stage-sidebar { position: sticky; top: 90px; }
+
+        .sidebar-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .info-label {
+            font-size: .7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+        }
+
+        .info-value {
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .sidebar-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+        @media (max-width: 768px) {
+            .stage-hero { padding: 110px 24px 50px; }
+            .stage-grid {
+                grid-template-columns: 1fr;
+                padding: 0 24px 60px;
+            }
+            .stage-sidebar { position: static; }
+            .stage-block { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="main-header">
+        <div class="logo">H-E <span>Yucel</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html#hero">À propos</a></li>
+                <li><a href="index.html#parcours">Parcours</a></li>
+                <li><a href="index.html#experience">Expérience</a></li>
+                <li><a href="index.html#comp">Compétences</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <div class="stage-hero">
+        <a href="index.html#experience" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            Retour au portfolio
+        </a>
+
+        <div class="stage-meta">
+            <span class="stage-badge">Stage professionnel</span>
+            <span class="tl-date">2025</span>
+        </div>
+
+        <h1>Stage chez <em>Resetel</em></h1>
+        <p class="subtitle">Découvrez le détail de mon stage au sein de Resetel, les missions que j'ai réalisées et les compétences que j'ai développées durant cette expérience.</p>
+    </div>
+
+    <!-- ===== CONTENU ===== -->
+    <div class="stage-grid">
+
+        <!-- Colonne principale -->
+        <div class="stage-main">
+
+            <div class="stage-block reveal">
+                <h2>
+                    <div class="block-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    Présentation de l'entreprise
+                </h2>
+                <p>Resetel est une entreprise spécialisée dans les solutions réseaux et télécommunications. À compléter avec la description de l'entreprise, son secteur d'activité, sa taille, sa localisation, etc.</p>
+            </div>
+
+            <div class="stage-block reveal">
+                <h2>
+                    <div class="block-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    Missions réalisées
+                </h2>
+                <ul>
+                    <li>Mission 1 — À compléter avec vos tâches réalisées</li>
+                    <li>Mission 2 — Configuration, installation, tests...</li>
+                    <li>Mission 3 — Autre mission importante du stage</li>
+                    <li>Mission 4 — À adapter selon votre vécu</li>
+                </ul>
+            </div>
+
+            <div class="stage-block reveal">
+                <h2>
+                    <div class="block-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    Ce que j'ai appris
+                </h2>
+                <p>À compléter avec un bilan personnel du stage : compétences techniques acquises, découvertes du monde professionnel, travail en équipe, etc.</p>
+                <ul>
+                    <li>Compétence technique 1</li>
+                    <li>Compétence technique 2</li>
+                    <li>Travail en équipe dans un environnement professionnel</li>
+                    <li>Gestion des priorités et organisation</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="stage-sidebar">
+
+            <div class="sidebar-card reveal">
+                <h3>Informations</h3>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">Entreprise</span>
+                        <span class="info-value">Resetel</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Type</span>
+                        <span class="info-value">Stage de formation</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Année</span>
+                        <span class="info-value">2025</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Durée</span>
+                        <span class="info-value">À compléter</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Localisation</span>
+                        <span class="info-value">À compléter</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card reveal">
+                <h3>Technologies utilisées</h3>
+                <div class="sidebar-pills">
+                    <span class="pill">À compléter</span>
+                    <span class="pill">Cisco</span>
+                    <span class="pill">Linux</span>
+                    <span class="pill">Réseau</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact">
+        <p class="foot-title">Travaillons ensemble</p>
+        <p class="foot-sub">N'hésitez pas à me contacter pour tout projet ou opportunité.</p>
+        <div class="contact-links">
+            <a href="mailto:enesyucel38@icloud.com" class="email-link">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                enesyucel38@icloud.com
+            </a>
+            <a href="mailto:huseyin-enes.yucel@uha.fr" class="email-link">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                huseyin-enes.yucel@uha.fr
+            </a>
+        </div>
+        <p class="copy">© 2026 Huseyin-Enes Yucel — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(r => observer.observe(r));
+    </script>
+
+</body>
+</html>
