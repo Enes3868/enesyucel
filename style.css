@@ -552,3 +552,104 @@ footer .copy {
     nav ul { gap: 18px; }
     nav a { font-size: .75rem; letter-spacing: 1px; }
 }
+
+/* ===== EXPÉRIENCE ===== */
+#experience { background: var(--cream); }
+
+.exp-card {
+    display: flex;
+    gap: 28px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    box-shadow: 0 2px 12px rgba(37,99,235,.08);
+    border: 1px solid var(--blue-pale);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.exp-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.exp-logo {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+    color: var(--white);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,99,235,.25);
+    flex-shrink: 0;
+}
+
+.exp-line {
+    width: 2px;
+    flex: 1;
+    background: var(--blue-pale);
+    margin-top: 12px;
+    border-radius: 2px;
+    min-height: 20px;
+}
+
+.exp-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.exp-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.exp-company {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: .5px;
+}
+
+.exp-desc {
+    font-size: .92rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 620px;
+}
+
+.exp-btn {
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .exp-card {
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+    }
+    .exp-left { flex-direction: row; }
+    .exp-line { display: none; }
+    .exp-header { flex-direction: column; gap: 8px; }
+}
