@@ -1,6 +1,5 @@
 /* ===================================================
    style.css — Portfolio Huseyin-Enes YUCEL
-   Fichier CSS global, importé par toutes les pages
    =================================================== */
 
 /* ===== RESET & VARIABLES ===== */
@@ -145,6 +144,14 @@ nav a:hover::after { width: 100%; }
     margin-bottom: 36px;
 }
 
+/* ===== HERO ACTIONS (boutons) ===== */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
 .hero-cta {
     display: inline-flex;
     align-items: center;
@@ -154,12 +161,47 @@ nav a:hover::after { width: 100%; }
     text-decoration: none;
     font-size: .9rem;
     font-weight: 500;
-    padding: 14px 28px;
+    padding: 13px 24px;
     border-radius: 999px;
     transition: background .3s, transform .3s;
 }
 
 .hero-cta:hover { background: var(--blue); transform: translateY(-2px); }
+
+/* Boutons CV */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    background: transparent;
+    transition: background .25s, color .25s, transform .25s;
+    letter-spacing: .3px;
+}
+
+.cv-btn:hover {
+    background: var(--blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Variante anglais — contour rose */
+.cv-btn--en {
+    border-color: var(--pink-dark);
+    color: var(--pink-dark);
+}
+
+.cv-btn--en:hover {
+    background: var(--pink-dark);
+    color: var(--white);
+    border-color: var(--pink-dark);
+}
 
 .hero-image-wrap {
     display: flex;
@@ -292,6 +334,94 @@ nav a:hover::after { width: 100%; }
     border-radius: 999px;
     margin-top: 8px;
 }
+
+/* ===== EXPÉRIENCE ===== */
+#experience { background: var(--cream); }
+
+.exp-card {
+    display: flex;
+    gap: 28px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    box-shadow: 0 2px 12px rgba(37,99,235,.08);
+    border: 1px solid var(--blue-pale);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.exp-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.exp-logo {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+    color: var(--white);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,99,235,.25);
+    flex-shrink: 0;
+}
+
+.exp-line {
+    width: 2px;
+    flex: 1;
+    background: var(--blue-pale);
+    margin-top: 12px;
+    border-radius: 2px;
+    min-height: 20px;
+}
+
+.exp-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.exp-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.exp-company {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: .5px;
+}
+
+.exp-desc {
+    font-size: .92rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 620px;
+}
+
+.exp-btn { align-self: flex-start; }
 
 /* ===== COMPÉTENCES ===== */
 #comp { background: var(--cream-dark); }
@@ -546,109 +676,13 @@ footer .copy {
     }
     .hero-image-wrap { order: -1; }
     .hero-text p { max-width: 100%; }
+    .hero-actions { justify-content: center; }
     .section-wrap { padding: 60px 24px; }
     .comp-grid, .skills-grid { grid-template-columns: 1fr; }
     header { padding: 0 20px; }
     nav ul { gap: 18px; }
     nav a { font-size: .75rem; letter-spacing: 1px; }
-}
-
-/* ===== EXPÉRIENCE ===== */
-#experience { background: var(--cream); }
-
-.exp-card {
-    display: flex;
-    gap: 28px;
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 36px 40px;
-    box-shadow: 0 2px 12px rgba(37,99,235,.08);
-    border: 1px solid var(--blue-pale);
-    transition: transform .3s, box-shadow .3s;
-}
-
-.exp-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-}
-
-.exp-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.exp-logo {
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
-    color: var(--white);
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(37,99,235,.25);
-    flex-shrink: 0;
-}
-
-.exp-line {
-    width: 2px;
-    flex: 1;
-    background: var(--blue-pale);
-    margin-top: 12px;
-    border-radius: 2px;
-    min-height: 20px;
-}
-
-.exp-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.exp-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.25rem;
-    color: var(--ink);
-    margin-bottom: 4px;
-}
-
-.exp-company {
-    font-size: .9rem;
-    font-weight: 600;
-    color: var(--blue);
-    letter-spacing: .5px;
-}
-
-.exp-desc {
-    font-size: .92rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 620px;
-}
-
-.exp-btn {
-    align-self: flex-start;
-}
-
-@media (max-width: 768px) {
-    .exp-card {
-        flex-direction: column;
-        padding: 24px;
-        gap: 20px;
-    }
+    .exp-card { flex-direction: column; padding: 24px; gap: 20px; }
     .exp-left { flex-direction: row; }
     .exp-line { display: none; }
     .exp-header { flex-direction: column; gap: 8px; }
