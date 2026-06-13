@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Styles spécifiques à la page stage */
         .stage-hero {
             padding: 140px 40px 80px;
             max-width: 1100px;
@@ -58,7 +57,6 @@
             line-height: 1.2;
             margin-bottom: 14px;
         }
-
         .stage-hero h1 em { color: var(--blue); font-style: italic; }
 
         .stage-hero .subtitle {
@@ -68,7 +66,7 @@
             line-height: 1.7;
         }
 
-        /* Grille contenu */
+        /* Layout principal */
         .stage-grid {
             max-width: 1100px;
             margin: 0 auto;
@@ -79,7 +77,6 @@
             align-items: start;
         }
 
-        /* Blocs de contenu principal */
         .stage-block {
             background: var(--white);
             border-radius: var(--radius);
@@ -110,7 +107,6 @@
             justify-content: center;
             flex-shrink: 0;
         }
-
         .block-icon svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; }
 
         .stage-block p {
@@ -120,11 +116,7 @@
             margin-bottom: 12px;
         }
 
-        .stage-block ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .stage-block ul { list-style: none; padding: 0; margin: 0; }
 
         .stage-block li {
             font-size: .92rem;
@@ -135,15 +127,65 @@
             border-bottom: 1px solid #f0f0f8;
             border-left: none;
         }
-
         .stage-block li:last-child { border-bottom: none; }
-
         .stage-block li::before {
             content: '→';
             position: absolute;
             left: 0;
             color: var(--pink);
             font-size: .8rem;
+        }
+
+        /* ===== INTERVENTIONS GRID ===== */
+        .interventions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 4px;
+        }
+
+        .intervention-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--cream);
+            border: 1px solid var(--blue-pale);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .intervention-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .intervention-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intervention-body {
+            padding: 14px 16px;
+        }
+
+        .intervention-tag {
+            display: inline-block;
+            font-size: .68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue);
+            background: var(--blue-pale);
+            padding: 3px 8px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        .intervention-body p {
+            font-size: .83rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Sidebar */
@@ -164,17 +206,9 @@
             margin-bottom: 16px;
         }
 
-        .info-row {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .info-row { display: flex; flex-direction: column; gap: 12px; }
 
-        .info-item {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
+        .info-item { display: flex; flex-direction: column; gap: 2px; }
 
         .info-label {
             font-size: .7rem;
@@ -194,18 +228,15 @@
 
         @media (max-width: 768px) {
             .stage-hero { padding: 110px 24px 50px; }
-            .stage-grid {
-                grid-template-columns: 1fr;
-                padding: 0 24px 60px;
-            }
+            .stage-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
             .stage-sidebar { position: static; }
             .stage-block { padding: 24px; }
+            .interventions-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header id="main-header">
         <div class="logo">H-E <span>Yucel</span></div>
         <nav>
@@ -220,23 +251,21 @@
         </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <div class="stage-hero">
         <a href="index.html#experience" class="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
             Retour au portfolio
         </a>
-
         <div class="stage-meta">
             <span class="stage-badge">Stage professionnel</span>
             <span class="tl-date">2026</span>
         </div>
-
         <h1>Stage chez <em>Resetel</em></h1>
         <p class="subtitle">Découvrez le détail de mon stage au sein de Resetel, les missions que j'ai réalisées et les compétences que j'ai développées durant cette expérience.</p>
     </div>
 
-    <!-- ===== CONTENU ===== -->
+    <!-- CONTENU -->
     <div class="stage-grid">
 
         <!-- Colonne principale -->
@@ -249,7 +278,7 @@
                     </div>
                     Présentation de l'entreprise
                 </h2>
-                <p>Resetel est une entreprise spécialisée dans les solutions réseaux et télécommunications. À compléter avec la description de l'entreprise, son secteur d'activité, sa taille, sa localisation, etc.</p>
+                <p>Resetel est une entreprise spécialisée dans les solutions réseaux et télécommunications, basée à Wettolsheim. Elle accompagne ses clients dans l'installation, la configuration et la maintenance de leurs infrastructures réseau.</p>
             </div>
 
             <div class="stage-block reveal">
@@ -260,10 +289,72 @@
                     Missions réalisées
                 </h2>
                 <ul>
-                    <li>Mission 1 — Préparation matériels (AP D-link, Sophos)</li>
-                    <li>Mission 2 — Intervention Client</li>
-                    <li>Mission 3 — Réparation matériels</li>
+                    <li>Préparation de matériels — Access points D-Link, pare-feu Sophos</li>
+                    <li>Interventions chez les clients — déploiement, bascule et configuration</li>
+                    <li>Réparation et dépannage de matériels défectueux</li>
                 </ul>
+            </div>
+
+            <!-- INTERVENTIONS -->
+            <div class="stage-block reveal">
+                <h2>
+                    <div class="block-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    Interventions & Photos
+                </h2>
+
+                <div class="interventions-grid">
+
+                    <div class="intervention-card">
+                        <img src="sophos.jpeg" alt="Installation pare-feu Sophos">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Pare-feu</span>
+                            <p>Installation du pare-feu Sophos chez un client — intégration dans le réseau existant et bascule du trafic.</p>
+                        </div>
+                    </div>
+
+                    <div class="intervention-card">
+                        <img src="casque.jpeg" alt="Réparation casque">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Réparation</span>
+                            <p>Problème de liaison entre un casque et sa base — jumelage effectué, le casque a refonctionné correctement.</p>
+                        </div>
+                    </div>
+
+                    <div class="intervention-card">
+                        <img src="serveur.jpeg" alt="Préparation serveur">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Serveur</span>
+                            <p>Préparation du serveur interne : installation de deux disques en RAID 1 et déploiement de Windows Server 2022.</p>
+                        </div>
+                    </div>
+
+                    <div class="intervention-card">
+                        <img src="routeur.jpeg" alt="Installation routeur Huawei">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Routeur</span>
+                            <p>Mise en place d'un routeur Huawei chez un client — câblage depuis l'ONT et bascule des postes vers le nouveau routeur.</p>
+                        </div>
+                    </div>
+
+                    <div class="intervention-card">
+                        <img src="wifi.jpeg" alt="Diagnostic WiFi">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Wi-Fi</span>
+                            <p>Coupure Wi-Fi chez un client — diagnostic sur site pour identifier et résoudre la panne.</p>
+                        </div>
+                    </div>
+
+                    <div class="intervention-card">
+                        <img src="imprim.jpeg" alt="Branchement imprimante">
+                        <div class="intervention-body">
+                            <span class="intervention-tag">Imprimante</span>
+                            <p>Passage d'une imprimante en filaire (Ethernet) et résolution d'un problème logiciel avec le scanner du client.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <div class="stage-block reveal">
@@ -273,12 +364,12 @@
                     </div>
                     Ce que j'ai appris
                 </h2>
-                <p>J'ai appris de nombreuses choses durant mon stage, que ce soit la configuration de nouveaux matériels ou le travail d'équipe au sein d'une entreprise</p>
+                <p>Ce stage m'a permis de développer des compétences techniques concrètes tout en découvrant le rythme et les exigences d'un environnement professionnel.</p>
                 <ul>
-                    <li>Configuration de nouveau matériel pare-feu Sophos, d'access point D-link.</li>
-                    <li>Maîtrise Outlook (Exchange)</li>
+                    <li>Configuration de pare-feu Sophos et d'access points D-Link</li>
+                    <li>Maîtrise d'Outlook / Exchange en contexte client</li>
                     <li>Travail en équipe dans un environnement professionnel</li>
-                    <li>Gestion des priorités et organisation</li>
+                    <li>Gestion des priorités et organisation lors des interventions</li>
                 </ul>
             </div>
 
@@ -304,7 +395,7 @@
                     </div>
                     <div class="info-item">
                         <span class="info-label">Durée</span>
-                        <span class="info-value">À 2 mois</span>
+                        <span class="info-value">2 mois</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">Localisation</span>
@@ -318,8 +409,11 @@
                 <div class="sidebar-pills">
                     <span class="pill">3CX</span>
                     <span class="pill">Sophos</span>
-                    <span class="pill">D-link</span>
+                    <span class="pill">D-Link</span>
                     <span class="pill">Outlook Exchange</span>
+                    <span class="pill">Huawei</span>
+                    <span class="pill">Windows Server 2022</span>
+                    <span class="pill">RAID</span>
                 </div>
             </div>
 
@@ -327,7 +421,7 @@
 
     </div>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer id="contact">
         <p class="foot-title">Travaillons ensemble</p>
         <p class="foot-sub">N'hésitez pas à me contacter pour tout projet ou opportunité.</p>
