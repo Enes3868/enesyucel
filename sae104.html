@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 1.04 — CV en ligne | Huseyin-Enes YUCEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="logo">H-E <span>Yucel</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html#hero">À propos</a></li>
+                <li><a href="index.html#parcours">Parcours</a></li>
+                <li><a href="index.html#experience">Expérience</a></li>
+                <li><a href="index.html#comp">Compétences</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="section-wrap">
+
+            
+
+            <div class="stage-meta" style="margin-top: 28px;">
+                <span class="stage-badge">SAE 1.04</span>
+                <span class="tl-date">BUT 1</span>
+            </div>
+
+            <h1 class="section-title">Se présenter sur <em style="color:var(--blue);font-style:italic;">Internet</em></h1>
+
+            <div class="skills-grid reveal">
+
+                <div class="comp-card">
+                    <h2>Présentation du projet</h2>
+                    <p style="color:var(--ink-soft);line-height:1.7;margin-bottom:16px;">
+                        Création d'un <strong>site internet en HTML/CSS</strong> représentant mon CV en ligne. Le site est hébergé sur GitHub Pages et présente mon parcours, mes compétences et mes projets.
+                    </p>
+                    <h3>Compétences BUT RT : UE3 [Programmer]</h3>
+                    <div class="pills" style="margin-top:10px;">
+                        <span class="pill">AC13.02 — Lire, exécuter, corriger et modifier un programme</span>
+                        <span class="pill">AC13.04 — Connaître l'architecture Web</span>
+                    </div>
+                </div>
+
+                <div class="skills-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;">
+                    <i class="fab fa-github" style="font-size:3rem;color:var(--ink);"></i>
+                    <h2>Code Source</h2>
+                    <p style="color:var(--muted);font-size:.9rem;">Retrouvez le code complet du site sur GitHub.</p>
+                    <a href="https://github.com/Enes3868/CV" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> Voir le dépôt →
+                    </a>
+                </div>
+
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="index.html#projects" class="hero-cta">
+                    <i class="fas fa-arrow-left"></i> Retour aux projets
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p class="foot-title">Travaillons ensemble</p>
+        <p class="foot-sub">N'hésitez pas à me contacter pour tout projet ou opportunité.</p>
+        <div class="contact-links">
+            <a href="mailto:enesyucel38@icloud.com" class="email-link">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                enesyucel38@icloud.com
+            </a>
+            <a href="mailto:huseyin-enes.yucel@uha.fr" class="email-link">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                huseyin-enes.yucel@uha.fr
+            </a>
+        </div>
+        <p class="copy">© 2026 Huseyin-Enes Yucel — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+        document.querySelectorAll('.reveal').forEach(el =>
+            new IntersectionObserver(([e]) => { if(e.isIntersecting){ el.classList.add('visible'); } }, {threshold:.1}).observe(el)
+        );
+    </script>
+
+</body>
+</html>

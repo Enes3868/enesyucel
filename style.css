@@ -687,3 +687,30 @@ footer .copy {
     .exp-line { display: none; }
     .exp-header { flex-direction: column; gap: 8px; }
 }
+
+/* ===== PROJECT TAG ===== */
+.project-tag {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--blue);
+    background: var(--blue-pale);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+/* ===== PROJECT CARD — version icône (sans image) ===== */
+.project-img-wrap--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--blue-pale), #e0edff);
+}
+
+.project-icon {
+    color: var(--blue);
+    opacity: .6;
+}
