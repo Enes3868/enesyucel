@@ -4,76 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE 1.03 — Wi-Fi | Huseyin-Enes YUCEL</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .sae-hero { padding: 130px 40px 60px; max-width: 1100px; margin: 0 auto; }
+        .back-link { display:inline-flex;align-items:center;gap:8px;color:var(--blue);text-decoration:none;font-size:.85rem;font-weight:500;margin-bottom:36px;transition:gap .25s; }
+        .back-link:hover { gap:12px; }
+        .sae-meta { display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap; }
+        .stage-badge { display:inline-flex;align-items:center;background:var(--blue-pale);color:var(--blue);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:6px 14px;border-radius:999px; }
+        .sae-hero h1 { font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--ink);line-height:1.2;margin-bottom:14px; }
+        .sae-hero h1 em { color:var(--blue);font-style:italic; }
+        .sae-hero .intro { font-size:1.05rem;color:var(--muted);max-width:680px;line-height:1.75;margin-bottom:0; }
+        .sae-content { max-width:1100px;margin:0 auto;padding:0 40px 80px; }
+        .sae-block { background:var(--white);border-radius:var(--radius);padding:36px 40px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:28px; }
+        .sae-block h2 { font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:10px;text-align:left;border-bottom:none; }
+        .block-icon { width:32px;height:32px;background:var(--blue-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+        .block-icon svg { width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2; }
+        .sae-block p { font-size:.95rem;color:var(--ink-soft);line-height:1.8;margin-bottom:12px; }
+        .sae-block ul { list-style:none;padding:0;margin:0; }
+        .sae-block li { font-size:.92rem;color:var(--ink-soft);padding:9px 0 9px 20px;position:relative;line-height:1.5;border-bottom:1px solid #f0f0f8; }
+        .sae-block li:last-child { border-bottom:none; }
+        .sae-block li::before { content:'→';position:absolute;left:0;color:var(--pink);font-size:.8rem; }
+        .two-col { display:grid;grid-template-columns:1fr 1fr;gap:28px; }
+        .tool-grid { display:flex;flex-wrap:wrap;gap:10px;margin-top:4px; }
+        .tool-pill { display:inline-flex;align-items:center;gap:8px;background:var(--cream-dark);color:var(--ink-soft);font-size:.82rem;font-weight:500;padding:8px 16px;border-radius:10px;border:1px solid rgba(0,0,0,.06); }
+        .tool-pill i { color:var(--blue);font-size:.85rem; }
+        .check-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px; }
+        .check-list li { display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--muted);padding:0;border:none; }
+        .check-list li::before { display:none; }
+        .check-list li i { color:var(--blue);margin-top:2px;flex-shrink:0; }
+        .pdf-embed { width:100%;height:680px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(37,99,235,.1); }
+        .img-embed { width:100%;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(37,99,235,.1);display:block; }
+        .github-card { display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:20px; }
+        .github-card i { font-size:2.8rem;color:var(--ink); }
+        @media(max-width:768px) {
+            .sae-hero { padding:110px 24px 50px; }
+            .sae-content { padding:0 24px 60px; }
+            .two-col { grid-template-columns:1fr; }
+            .sae-block { padding:24px; }
+        }
+    </style>
 </head>
 <body>
-
     <header id="main-header">
         <div class="logo">H-E <span>Yucel</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html#hero">À propos</a></li>
-                <li><a href="index.html#parcours">Parcours</a></li>
-                <li><a href="index.html#experience">Expérience</a></li>
-                <li><a href="index.html#comp">Compétences</a></li>
-                <li><a href="index.html#projects">Projets</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <nav><ul>
+            <li><a href="index.html#hero">À propos</a></li>
+            <li><a href="index.html#parcours">Parcours</a></li>
+            <li><a href="index.html#experience">Expérience</a></li>
+            <li><a href="index.html#comp">Compétences</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul></nav>
     </header>
+    <div class="sae-hero">
+        <a href="index.html#projects" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            Retour aux projets
+        </a>
+        <div class="sae-meta">
+            <span class="stage-badge">SAE 1.03</span>
+            <span class="tl-date">BUT 1</span>
+            <span class="section-label" style="margin:0;">UE2 — Connecter</span>
+        </div>
+        <h1>Découverte du<br><em>Wi-Fi</em></h1>
+    </div>
+    <div class="sae-content">
 
-    <main style="padding-top: 100px;">
-        <section class="section-wrap">
+        <div class="sae-block reveal">
+            <h2>
+                <div class="block-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
+                Contexte & Objectifs
+            </h2>
+            <p>Cette SAE avait pour but de <strong>découvrir et caractériser un dispositif de transmission sans fil</strong> — le Wi-Fi. Il s'agissait d'analyser les signaux, mesurer les performances en conditions réelles et rédiger un rapport technique. Le logiciel Acrylic Wi-Fi a été utilisé pour capturer et analyser les trames.</p>
+            <ul class="check-list">
+                <li><i class="fas fa-check-circle"></i> Analyser les signaux Wi-Fi (RSSI, SNR, canaux)</li>
+                <li><i class="fas fa-check-circle"></i> Comparer les performances 2.4 GHz vs 5 GHz</li>
+                <li><i class="fas fa-check-circle"></i> Identifier les sources d'interférences</li>
+                <li><i class="fas fa-check-circle"></i> Rédiger un rapport d'analyse technique</li>
+            </ul>
+        </div>
 
-            
-
-            <div class="stage-meta" style="margin-top: 28px;">
-                <span class="stage-badge">SAE 1.03</span>
-                <span class="tl-date">BUT 1</span>
+        <div class="two-col reveal">
+            <div class="sae-block">
+                <h2>
+                    <div class="block-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    Ce que j'ai réalisé
+                </h2>
+                <ul>
+                    <li>Capture et analyse de trames Wi-Fi avec Acrylic</li>
+                    <li>Mesures de la puissance du signal (RSSI) à différentes distances</li>
+                    <li>Comparaison des bandes de fréquences 2.4 GHz et 5 GHz</li>
+                    <li>Identification des canaux utilisés et des chevauchements</li>
+                    <li>Analyse des standards Wi-Fi (802.11a/b/g/n/ac)</li>
+                    <li>Rédaction d'un rapport technique détaillé</li>
+                </ul>
             </div>
-
-            <h1 class="section-title">Découvrir un dispositif de <em style="color:var(--blue);font-style:italic;">transmission</em></h1>
-
-            <div class="skills-grid reveal">
-
-                <div class="comp-card">
-                    <h2>Présentation du projet</h2>
-                    <p style="color:var(--ink-soft);line-height:1.7;margin-bottom:16px;">
-                        Durant cette SAE, nous avons découvert et expérimenté la technologie <strong>Wi-Fi</strong> — analyse des signaux, mesure des performances et déploiement d'un point d'accès en conditions réelles.
-                    </p>
-                    <h3>Compétences BUT RT : UE2 [Connecter]</h3>
-                    <div class="pills" style="margin-top:10px;">
-                        <span class="pill">AC12.01 — Mesurer, analyser et commenter les signaux</span>
-                        <span class="pill">AC12.03 — Déployer des supports de transmission</span>
-                        <span class="pill">AC12.05 — Communiquer avec un tiers</span>
-                    </div>
+            <div class="sae-block">
+                <h2>
+                    <div class="block-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                    Compétences acquises
+                </h2>
+                <div class="pills" style="gap:8px;">
+                    <span class="pill">AC12.01 — Mesurer et analyser les signaux</span>
+                    <span class="pill">AC12.02 — Caractériser les systèmes de transmission</span>
+                    <span class="pill">AC12.03 — Déployer des supports de transmission</span>
+                    <span class="pill">AC12.05 — Communiquer avec un interlocuteur</span>
                 </div>
-
-                <div class="skills-card" style="display:flex;flex-direction:column;gap:16px;">
-                    <h2>Objectifs</h2>
-                    <ul style="list-style:none;font-size:.9rem;color:var(--muted);display:flex;flex-direction:column;gap:10px;">
-                        <li><i class="fas fa-check-circle" style="color:var(--blue);margin-right:8px;"></i>Mesurer et analyser des signaux Wi-Fi</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--blue);margin-right:8px;"></i>Caractériser les performances d'un réseau sans fil</li>
-                        <li><i class="fas fa-check-circle" style="color:var(--blue);margin-right:8px;"></i>Rédiger un rapport technique</li>
-                    </ul>
-                    <a href="https://github.com/NolanHoarau/Acrylic" target="_blank" class="btn" style="align-self:flex-start;margin-top:8px;">
-                        <i class="fab fa-github"></i> Voir sur GitHub →
-                    </a>
-                </div>
-
             </div>
+        </div>
 
-            <div style="margin-top: 20px;">
-                <a href="index.html#projects" class="hero-cta">
-                    <i class="fas fa-arrow-left"></i> Retour aux projets
+        <div class="sae-block reveal">
+            <h2>
+                <div class="block-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7"/></svg></div>
+                Outils utilisés
+            </h2>
+            <div class="tool-grid">
+                <span class="tool-pill"><i class="fas fa-wifi"></i> Acrylic Wi-Fi</span>
+                <span class="tool-pill"><i class="fas fa-broadcast-tower"></i> Analyseur de spectre</span>
+                <span class="tool-pill"><i class="fas fa-laptop"></i> Windows 11</span>
+                <span class="tool-pill"><i class="fas fa-file-word"></i> Rapport Word</span>
+            </div>
+            <div style="margin-top:20px;">
+                <a href="https://github.com/NolanHoarau/Acrylic" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> Voir le projet sur GitHub →
                 </a>
             </div>
-
-        </section>
-    </main>
-
+        </div>
+    </div>
     <footer id="contact">
         <p class="foot-title">Travaillons ensemble</p>
         <p class="foot-sub">N'hésitez pas à me contacter pour tout projet ou opportunité.</p>
@@ -89,15 +150,11 @@
         </div>
         <p class="copy">© 2026 Huseyin-Enes Yucel — Tous droits réservés</p>
     </footer>
-
     <script>
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
         document.querySelectorAll('.reveal').forEach(el =>
-            new IntersectionObserver(([e]) => { if(e.isIntersecting){ el.classList.add('visible'); } }, {threshold:.1}).observe(el)
-        );
+            new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); }, {threshold:.1}).observe(el));
     </script>
-    
-
 </body>
 </html>

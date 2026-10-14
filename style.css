@@ -714,3 +714,73 @@ footer .copy {
     color: var(--blue);
     opacity: .6;
 }
+
+/* ===== CARTE DE TÉLÉCHARGEMENT ===== */
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 420px;
+    background: var(--white);
+    border: 1px solid var(--blue-pale);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(37,99,235,.08);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-left-color: var(--pink-dark);
+}
+
+.download-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+    color: var(--white);
+    border-radius: 12px;
+}
+
+.download-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.download-title {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.download-meta {
+    font-size: .78rem;
+    color: var(--muted);
+}
+
+.download-arrow {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-pale);
+    color: var(--blue);
+    border-radius: 50%;
+    transition: background .25s, color .25s;
+}
+
+.download-card:hover .download-arrow {
+    background: var(--pink-dark);
+    color: var(--white);
+}
